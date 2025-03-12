@@ -1,0 +1,68 @@
+body{
+    display: grid;
+    grid-template-columns: 200px auto;
+    margin: 0;
+    padding: 0;
+    font-size: 3rem;
+    background-color: #A0DDFF;
+}
+.side{
+    background-color: #6290C8;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    padding: auto;
+    height: 100vh;
+}
+#reset{
+    background-color: aliceblue;
+    color: black;
+    border-radius: 10%;
+}
+.card{
+    width: 160px;
+    height: 180px;
+    margin: auto;
+    font-size: larger;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(images/front-good.jfif);
+    border-radius: 5%;
+}
+#stack{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: auto;
+    background-position: center;
+    background-size: 80vh;
+    background-repeat: no-repeat;
+}
+.solve{
+    width: 160px;
+    height: 180px;
+    background-image: url(images/front-bad.jfif);
+    margin: auto;
+    font-size: larger;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5%;
+    
+}
+.mrs-sheppards-regular {
+    font-family: "Mrs Sheppards", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  #next{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height:100vh;
+    align-self: center;
+    opacity: 1%;
+    border-color: black;
+    border-width: 1px;
+  }
