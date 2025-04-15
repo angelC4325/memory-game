@@ -1,3 +1,6 @@
+if(!localStorage.getItem('bestScore')){
+    localStorage.setItem('bestScore',100)
+}
 let win=0;
 let count=0;
 let ids=[];
