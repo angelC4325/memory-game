@@ -288,6 +288,8 @@ let Cards_1=[
 ];;
 let current='';
 let score=0;
+let i=0;
+let repeat;
 function low(){
     noback();
     cards.splice(4);
@@ -325,6 +327,28 @@ function impossible(){
     cards.forEach(display);
     document.getElementById('choices').innerHTML=`<buttom id='reset' onclick="location.reload()">reset</buttom>`;
     current='imposible';
+}
+function competitive(){
+    console.log(Cards_1)
+    console.log(cards)
+    noback();
+    cards.sort(function(){return 0.5 - Math.random()});
+    document.getElementById('stack').style.gridTemplateColumns='auto auto auto auto auto auto auto';
+    cards.forEach(display);
+    document.getElementById('choices').innerHTML=`<buttom id='reset' onclick="location.reload()">reset</buttom>`;
+    current='imposible';
+    let t= document.createElement('div');
+    
+    repeat =setInterval(()=>{
+        t.textContent=`time ${i}`;
+        i++;
+    },1000);
+    document.getElementById('time').appendChild(t);
+    let t2=document.createElement('div');
+    console.log(localStorage.getItem('bestScore'))
+    if(localStorage.getItem('bestScore')){
+    t2.textContent=`best ${localStorage.getItem('bestScore')}`}
+    document.getElementById('time').appendChild(t2);
 }
 function display(){
     const container = document.getElementById('stack');
@@ -488,7 +512,10 @@ function display(){
     ];
     if (current!='imposible'){
     container.innerHTML='<div>click the center of win for the next stage<button id="next" onclick="next()">next dificulty</button></div>';}
-    else{container.innerHTML='';}
+    else{container.innerHTML='';
+    if(localStorage.getItem('bestScore')>=i){
+    localStorage.setItem('bestScore',i);}
+    clearInterval(repeat);}
     container.style.backgroundImage= `url(images/win-removebg-preview.png)`;
     container.style.width='100%';
     container.style.height='100vh';
